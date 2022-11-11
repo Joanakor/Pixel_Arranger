@@ -30,29 +30,23 @@ public class Main {
 
         Color color;
         String hex;
-        ArrayList<String> array = new ArrayList<>();
+        ArrayList<Integer> pixelcolors = new ArrayList<>();
 
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++){
                 pixel = img.getRGB(x, y);
                 color = new Color(pixel);
                 hex = String.format("%02x%02x%02x", color.getRed(),color.getGreen(),color.getBlue());
-                array.add(hex);
+                pixelcolors.add((int)Long.parseLong(hex, 16));
             }
         }
 
-        array.sort(Collections.reverseOrder());
-
-        ArrayList<Integer> pixels = new ArrayList<>();
-
-        for (String h : array){
-            pixels.add((int)Long.parseLong(h, 16));
-        }
+        Collections.sort(pixelcolors);
 
         int count = 0;
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++){
-                img.setRGB(x, y, pixels.get(count));
+                img.setRGB(x, y, pixelcolors.get(count));
                 count++;
             }
         }
