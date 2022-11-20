@@ -14,7 +14,7 @@ public class ImageProcessor {
         img = ImageIO.read(f);
         ArrayList<Integer> pixelcolors = new ArrayList<>();
 
-        pixelcolors = Sort_pixels_hsb(pixelcolors, img);
+        pixelcolors = Sort_pixels_hsb(pixelcolors, img);           //selected sorting
 
         int count = 0;
         for (int y = 0; y < img.getHeight(); y++) {                //Colors are inserted in every pixel
@@ -53,7 +53,7 @@ public class ImageProcessor {
 
         BigDecimal hue;
 
-        ArrayList<float[]> hsbvalues = null;
+        ArrayList<float[]> hsbvalues = new ArrayList<float[]>();
 
         for (int y = 0; y < img.getHeight(); y++) {
             for (int x = 0; x < img.getWidth(); x++) {
@@ -63,6 +63,12 @@ public class ImageProcessor {
                 float[] hsb = Color.RGBtoHSB(color.getRed(), color.getGreen(), color.getBlue(), null);
                 hsbvalues.add(hsb);
             }
+        }
+
+        ValuesSorter.QuickSort.sort(hsbvalues, 0, hsbvalues.size()-1);
+        for (float[] x : hsbvalues)
+        {
+            list.add(Color.HSBtoRGB(x[0], x[1], x[2]));
         }
         return list;
     }
