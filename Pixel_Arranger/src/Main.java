@@ -7,10 +7,7 @@ import javax.imageio.ImageIO;
 import java.util.Collections;
 
 public class Main {
-    public static void main(String args[])
-            throws IOException
-
-            //Getting the image
+    public static void main(String args[]) throws IOException
     {
         BufferedImage img = null;
         File f = null;
