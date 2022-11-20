@@ -18,7 +18,7 @@ public class Main {
 
         f = new File("C:/Users/mark6/OneDrive/Documents/Pixel_Arranger/Pixel_Arranger/testimages/test1.png");
 
-        img = proc.Sort_pixels(f);
+        img = proc.Get_sorted_img(f);
 
         try {
             f = new File("C:/Users/mark6/OneDrive/Documents/Pixel_Arranger/Pixel_Arranger/testimages/result1.png");
