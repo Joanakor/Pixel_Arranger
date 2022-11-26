@@ -89,8 +89,7 @@ public class ImageProcessor {
     public ArrayList<Integer> getArrayWithUniqueColors (ArrayList<Integer> pixelColors){
 
         int index = 0;
-
-        for(int i = 0; i < )
+        return null;
 
     }
 
