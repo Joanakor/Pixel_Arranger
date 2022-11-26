@@ -13,7 +13,7 @@ public class ImageProcessor {
         img = ImageIO.read(f);
         ArrayList<Integer> pixelcolors = new ArrayList<>();
 
-        pixelcolors = sortPixelsHSB(pixelcolors, img);           //selected sorting
+        pixelcolors = sortPixelsHex(pixelcolors, img);           //selected sorting
 
         int count = 0;
         for (int y = 0; y < img.getHeight(); y++) {                //Colors are inserted in every pixel
@@ -25,7 +25,11 @@ public class ImageProcessor {
         return img;
     }
 
-    public ArrayList<Integer> sortPixelHex(ArrayList<Integer> list, BufferedImage img) // Fills and sorts
+    public void printUniqueColorsPercent(BufferedImage img) throws IOException {
+        
+    }
+
+    public ArrayList<Integer> sortPixelsHex(ArrayList<Integer> list, BufferedImage img) // Fills and sorts
     {                                                                                     //array of hex values
         int pixelColor = 0;
 

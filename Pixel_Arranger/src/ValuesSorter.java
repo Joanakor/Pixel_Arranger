@@ -62,9 +62,9 @@ public class ValuesSorter {
         float[] temp;
         for (int i = 0; i < n; i++) {
             for (int j = 1; j < (n - i); j++) {
-                if ((arr.get(j - 1)[0] > arr.get(j)[0]) ||
-                        ((arr.get(j - 1)[0] == arr.get(j)[0]) && (arr.get(j - 1)[1] > arr.get(j)[1])) ||
-                        ((arr.get(j - 1)[0] == arr.get(j)[0]) && (arr.get(j - 1)[1] == arr.get(j)[1]) && (arr.get(j - 1)[2] > arr.get(j)[2]))) {
+                if ((arr.get(j - 1)[1] > arr.get(j)[1]) ||
+                        ((arr.get(j - 1)[1] == arr.get(j)[1]) && (arr.get(j - 1)[2] > arr.get(j)[2])) ||
+                        ((arr.get(j - 1)[1] == arr.get(j)[1]) && (arr.get(j - 1)[2] == arr.get(j)[2]) && (arr.get(j - 1)[0] > arr.get(j)[0]))) {
                     //swap elements
                     temp = arr.get(j - 1);
                     arr.set(j - 1, arr.get(j));
@@ -72,6 +72,7 @@ public class ValuesSorter {
                 }
             }
         }
+        int debug = 0;
     }
 }
 
