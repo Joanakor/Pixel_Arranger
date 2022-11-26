@@ -1,10 +1,7 @@
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import javax.imageio.ImageIO;
-import java.util.Collections;
 
 public class Main {
     public static void main(String args[]) throws IOException
@@ -13,12 +10,15 @@ public class Main {
         File f = null;
         ImageProcessor proc = new ImageProcessor();
 
-        f = new File("C:/Users/mark6/OneDrive/Documents/Pixel_Arranger/Pixel_Arranger/testimages/test1.png");
+        String inputfile = "testimage.png";
+        String outputfile = "testimage3.png";
 
-        img = proc.Get_sorted_img(f);
+        f = new File("C:/Users/mark6/OneDrive/Documents/Pixel_Arranger/Pixel_Arranger/testimages/" + inputfile);
+
+        img = proc.getSortedImage(f);
 
         try {
-            f = new File("C:/Users/mark6/OneDrive/Documents/Pixel_Arranger/Pixel_Arranger/testimages/result1.png");
+            f = new File("C:/Users/mark6/OneDrive/Documents/Pixel_Arranger/Pixel_Arranger/testimages/" + outputfile);
             ImageIO.write(img, "png", f);
         }
         catch (IOException e) {
